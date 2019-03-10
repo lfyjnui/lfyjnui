@@ -1,0 +1,26 @@
+<div class="col hide-on-small-only m3 l2">
+    <div class="pinned">
+        <ul class="card-panel table-of-contents">
+            {% for category in site.categories %}
+            <li class="collection-item">
+                <a href="{{ site.baseurl }}categories/#{{ category | first }}">{{ category | first }}
+                    <span class="badge new" data-badge-caption="">
+                        {{ category | last | size }}
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul class="card-panel table-of-contents">
+            {% for tag in site.tags %}
+            <li class="collection-item">
+                <a href="{{ site.baseurl }}tags/#{{ tag | first }}">{{ tag | first }}
+                    <span class="badge new" data-badge-caption="">
+                        {{ tag | last | size }}
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

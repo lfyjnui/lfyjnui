@@ -1,0 +1,16 @@
+---
+layout: page
+title: 标签
+---
+{% for tag in site.tags %}
+<article class="card-panel">
+    <h5 id="{{ category | first }}" class="card-title">{{ tag | first }}</h5>
+    <ul class="table-of-contents">
+        {% for post in  tag[1]  %}
+        <li>
+            <span>{{ post.date | date_to_string }} » </span><a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</article>
+{% endfor %}
