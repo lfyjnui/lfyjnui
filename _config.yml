@@ -25,6 +25,7 @@ assetsurl: "/assets/"
 twitter_username: jekyllrb
 github_username:  jekyll
 
+excerpt_separator:  '<!-- more -->'
 # Build settings
 markdown: kramdown
 

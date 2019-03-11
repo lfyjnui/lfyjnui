@@ -2,7 +2,7 @@ function flow(name, f) {
     var chart = flowchart.parse(f);
     chart.drawSVG(name,
         {
-            'x': 30,
+            'x': 50,
             'y': 50,
             'line-width': 3,
             'maxWidth': 3,//ensures the flowcharts fits within a certian width
