@@ -25,12 +25,17 @@ assetsurl: "/assets/"
 twitter_username: jekyllrb
 github_username:  jekyll
 
+paginate: 10
+paginate_path: "blog/page:num"
+
 excerpt_separator:  '<!-- more -->'
 # Build settings
 markdown: kramdown
 
 plugins:
   - jekyll-feed
+  - jekyll-paginat
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
