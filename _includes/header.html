@@ -2,13 +2,12 @@
     <nav style="background-color: midnightblue">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="{{ site.baseurl }}" class="brand-logo left">
+                <a href="{{ "/" | relative_url }}" class="brand-logo left">
                     <span>火热的冰</span>
                 </a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ site.baseurl }}categories">分类</a></li>
-                    <li><a href="{{ site.baseurl }}tags">标签</a></li>
-                    <li><a href="{{site.baseurl}}"></a></li>
+                    <li><a href="{{ "/categories" | relative_url }}">分类</a></li>
+                    <li><a href="{{ "/tags" | relative_url }}">标签</a></li>
                 </ul>
             </div>
         </div>
