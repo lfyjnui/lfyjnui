@@ -4,41 +4,19 @@
 
 layout: page
 title: 火热的冰
-pagination:
-    enabled: true
-    per_page: 6
 ---
+{% for category in site.categories %}
+<article class="card">
+    <div class="card-content">
+        <p id="{{ category | first }}" class="card-title">{{ category | first }}</p>
+        <ul class="table-of-contents">
+            {% for post in  category[1]  %}
+            <li>
+                <time datetime="{{ post.date }}">{{ post.date | date_to_string }}</time> » </span><a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
 
-{% for post in paginator.posts %}
-<div class="card-panel">
-    <a class="black-text" href="{{ post.url }}">
-        <h5>{{ post.title }}</h5>
-        <div class="markdown-body">
-        {{ post.excerpt }}{{ post.date | date_to_string }}
-        </div>
-    </a>
-</div>
+    </div>
+</article>
 {% endfor %}
-
-<!-- 分页代码 -->
-<ul class="pagination">
-    <li class="waves-effect">
-        <a {% if paginator.previous_page == "" %} class="disabled"{% endif %} href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-            <i class="material-icons">chevron_left</i>
-        </a>
-    </li>
-    {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-    <li class="active"><a href="#!">{{ page }}</a></li>
-    {% elsif page == 1 %}
-    <li class="waves-effect"><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-    {% else %}
-    <li class="waves-effect">
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':', '/' | replace: 'num', page }}">{{ page }}</a>
-    </li>
-    {% endif %}
-    {% endfor %}
-
-    <li class="waves-effect"><a {% if paginator.next_page =="" %}class="disabled" {% endif %} href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_right</i></a></li>
-
-</ul>
